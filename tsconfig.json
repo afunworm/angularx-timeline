@@ -14,7 +14,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "angularx-timeline": [
+        "dist/angularx-timeline/angularx-timeline",
+        "dist/angularx-timeline"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

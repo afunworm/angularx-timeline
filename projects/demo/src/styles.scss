@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+//Import for Angular Material
+@import '~@angular/material/theming';
+@include mat-core();
+
+//AngularX Timeline
+@import '~angularx-timeline/theming';
+
+//Define palettes
+//mat-palette(color, default, lighter, darker)
+$primary:          mat-palette($mat-blue, 600, 50);
+$accent:           mat-palette($mat-pink, 600, 50);
+$warn:             mat-palette($mat-red, 500, 100, 900);
+
+//Create the theme
+$theme: mat-light-theme($primary, $accent, $warn);
+
+//Theme build
+@include angular-material-theme($theme);
+@include angularx-timeline-theme($theme);
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

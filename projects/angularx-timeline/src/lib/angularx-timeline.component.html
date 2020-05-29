@@ -1,0 +1,19 @@
+<ul [class]="timelineClass">
+    
+    <li *ngFor="let entry of data" class="timeline-item {{ color }} {{ isTitleOnly(entry) ? 'period' : '' }}">
+        <div class="timeline-info">{{ isTitleOnly(entry) ? '' : formatTimelineDate(entry.date) }}</div>
+        <div class="timeline-marker {{ color }}"></div>
+
+        <!-- Period Only -->
+        <div class="timeline-content" *ngIf="isTitleOnly(entry)">
+            <h2 class="timeline-title">{{ formatTimelineDate(entry.title) }}</h2>
+        </div>
+
+        <!-- Full Entry -->
+        <div class="timeline-content" *ngIf="!isTitleOnly(entry)">
+            <h2 class="timeline-title">{{ entry.title }}</h2>
+            <div [innerHTML]="entry.content"></div>
+        </div>
+    </li>
+
+</ul>
